@@ -124,15 +124,15 @@
 
   // https://developer.chrome.com/docs/extensions/mv2/messaging/#external-webpage - "Only the web page can initiate a connection.", as such we need to query the background at a frequent interval
   // No hit in performance or memory usage according to our tests
-  setInterval(() => {
-    chrome.runtime.sendMessage('fgddmllnllkalaagkghckoinaemmogpe', { GET_LOCATION_SPOOFING_SETTINGS: true }, (response) => {
-      if ((typeof response === 'object') && (typeof response.coords === 'object')) {
-        hookedObj.genLat = response.coords.lat;
-        hookedObj.genLon = response.coords.lon;
-        hookedObj.fakeGeo = response.fakeIt;
-      }
-    });
-  }, 500);
+  // setInterval(() => {
+  //   chrome.runtime.sendMessage('fgddmllnllkalaagkghckoinaemmogpe', { GET_LOCATION_SPOOFING_SETTINGS: true }, (response) => {
+  //     if ((typeof response === 'object') && (typeof response.coords === 'object')) {
+  //       hookedObj.genLat = response.coords.lat;
+  //       hookedObj.genLon = response.coords.lon;
+  //       hookedObj.fakeGeo = response.fakeIt;
+  //     }
+  //   });
+  // }, 500);
   //]]>
 }
           )();</script><head>
